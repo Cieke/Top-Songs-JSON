@@ -12,6 +12,8 @@
 		4D43E22D1DA4E3FB009D6E5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D43E22B1DA4E3FB009D6E5D /* Main.storyboard */; };
 		4D43E22F1DA4E3FB009D6E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D43E22E1DA4E3FB009D6E5D /* Assets.xcassets */; };
 		4D43E2321DA4E3FB009D6E5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D43E2301DA4E3FB009D6E5D /* LaunchScreen.storyboard */; };
+		4D43E23A1DA4E631009D6E5D /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43E2391DA4E631009D6E5D /* Song.swift */; };
+		4D43E23C1DA4EB0D009D6E5D /* cd.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4D43E23B1DA4EB0D009D6E5D /* cd.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4D43E22E1DA4E3FB009D6E5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D43E2311DA4E3FB009D6E5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D43E2331DA4E3FB009D6E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D43E2391DA4E631009D6E5D /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4D43E23B1DA4EB0D009D6E5D /* cd.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cd.jpeg; path = "../../Resources for Labs/Chapter 16/cd.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,9 @@
 				4D43E2271DA4E3FB009D6E5D /* AppDelegate.swift */,
 				4D43E2291DA4E3FB009D6E5D /* ViewController.swift */,
 				4D43E22B1DA4E3FB009D6E5D /* Main.storyboard */,
+				4D43E2391DA4E631009D6E5D /* Song.swift */,
 				4D43E22E1DA4E3FB009D6E5D /* Assets.xcassets */,
+				4D43E23B1DA4EB0D009D6E5D /* cd.jpeg */,
 				4D43E2301DA4E3FB009D6E5D /* LaunchScreen.storyboard */,
 				4D43E2331DA4E3FB009D6E5D /* Info.plist */,
 			);
@@ -125,6 +131,7 @@
 			files = (
 				4D43E2321DA4E3FB009D6E5D /* LaunchScreen.storyboard in Resources */,
 				4D43E22F1DA4E3FB009D6E5D /* Assets.xcassets in Resources */,
+				4D43E23C1DA4EB0D009D6E5D /* cd.jpeg in Resources */,
 				4D43E22D1DA4E3FB009D6E5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D43E23A1DA4E631009D6E5D /* Song.swift in Sources */,
 				4D43E22A1DA4E3FB009D6E5D /* ViewController.swift in Sources */,
 				4D43E2281DA4E3FB009D6E5D /* AppDelegate.swift in Sources */,
 			);
@@ -265,6 +273,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Training.Top-Songs-JSON";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -277,6 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Training.Top-Songs-JSON";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
