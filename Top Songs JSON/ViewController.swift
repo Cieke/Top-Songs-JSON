@@ -13,6 +13,8 @@ class ViewController: UITableViewController, URLSessionDelegate, URLSessionDataD
     var session : URLSession?
     var songsArray = [Song]()
     
+    var downloading = false
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return songsArray.count }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,6 +33,8 @@ class ViewController: UITableViewController, URLSessionDelegate, URLSessionDataD
     
     func fetchJsonFeed ()
     {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         songsArray = [Song]()
         
         let myURL = URL(string: "https://itunes.apple.com/gb/rss/topalbums/limit=50/json")
@@ -88,6 +92,7 @@ class ViewController: UITableViewController, URLSessionDelegate, URLSessionDataD
         else{
             print("Error: \(error)")
         }
+         checkForRemainingTasks()
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
@@ -102,11 +107,32 @@ class ViewController: UITableViewController, URLSessionDelegate, URLSessionDataD
         }
     }
 
+    func refreshJsonFeed () {
+        if !downloading {
+            downloading = true
+            fetchJsonFeed()
+        }
+    }
     
+    func checkForRemainingTasks ()
+    {
+        session?.getTasksWithCompletionHandler({ (dataTasks, uploadTasks, downloadTasks) -> Void in
+            if downloadTasks.count == 0 {
+                DispatchQueue.main.async() {
+                    self.refreshControl!.endRefreshing()
+                    self.downloading = false
+                }
+            } })
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl!.addTarget(self, action: #selector(ViewController.fetchJsonFeed), for: .valueChanged)
+        
         let sessionConfig = URLSessionConfiguration.default
         session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+        downloading = true
         fetchJsonFeed()
     }
 

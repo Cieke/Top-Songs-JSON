@@ -38,6 +38,9 @@
                             <outlet property="delegate" destination="EL7-vn-EWL" id="bRB-JS-qj3"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="HxP-VT-kB1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGW-9c-UFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
